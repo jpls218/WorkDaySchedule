@@ -1,0 +1,9 @@
+#day_of_the_week {
+    background-color: lightgrey;
+    width: 100%;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 2px;
+    text-align: center;
+    
+  }
