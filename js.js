@@ -1,9 +1,9 @@
 $(document).ready(function () {
  
-    // get date with moment js and displaying the date on page
+    //Provides the date using moment js and then displays it
    $("#currentDay").text(moment().format("MMMM Do YYYY"));
    var currentHour = parseInt(moment().format('HH'));
-   //global variables
+   //List of the global variables
    var varTime = " AM";
    var textTime = 8;
    var realTime = 8;
@@ -13,27 +13,29 @@ $(document).ready(function () {
    init();
      
    function init(){
-   //if doesnt have local storage going to create one empty
+   //Creates an empty local storage
        if (localStorage.getItem("day") === null) {
            day = ["","","","","","","","",""];
            localStorage.setItem("day", JSON.stringify(day));
         }
-   //using variable to play with the local storage
-         storedDay = JSON.parse(localStorage.getItem("day"));
+   //Places variable into local storage
+        storedDay = JSON.parse(localStorage.getItem("day"));
        
     createPage();
    
    }
-   //adding the class to each textarea depending the value (time) they have
+   //Changes the color of the hour block depending on the time
    $("textarea").each(function () {
        var name = parseInt($(this).attr("value"));   
-   
+    //Gray color if it is past that hour
        if (name < currentHour) {
            $(this).addClass("past");      
        }
+    //Green color if the time hasn't happened yet
        if (name > currentHour) {
            $(this).addClass("future")      
        }
+    //Red color if it is that specific hour block
        if (name === currentHour) {
            $(this).addClass("present")     
        }
@@ -75,16 +77,16 @@ $(document).ready(function () {
    
      }
    }
-   //save button, adding the value of the buttton to local storage.
-      $(".saveBtn").on("click", function() {
+   //When you hit the save button, your value is added to local storage
+    $(".saveBtn").on("click", function() {
           
-               var btnText = ($(this).siblings("textarea").val());
-               console.log(btnText);
-               var horaTest = $(this).val();
-               console.log(horaTest);
-               storedDay[horaTest-9] = btnText;
-               localStorage.setItem("day", JSON.stringify(storedDay));
+        var btnText = ($(this).siblings("textarea").val());
+        console.log(btnText);
+        var hourTest = $(this).val();
+        console.log(hourTest);
+        storedDay[hourTest-9] = btnText;
+        localStorage.setItem("day", JSON.stringify(storedDay));
    
-   });
+    });
    
 });
