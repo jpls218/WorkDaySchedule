@@ -41,7 +41,7 @@ $(document).ready(function () {
        }
    })
    
-   //this function is to create the page 
+   //Creates the display page 
    function createPage(){
    
      for (i = 0; i < 9; i++) {
@@ -51,7 +51,7 @@ $(document).ready(function () {
    
        if (i >= 3) varTime = " PM";
        if (i === 4) textTime = 1;
-       //creating the elements and giving them class and attr
+       //All of the elements that will be on the page including their class and attributes that they will have
        var divRow = $("<div>");
        divRow.addClass("row time-block");
        divRow.attr("id", "hour-" + realTime);
@@ -68,7 +68,7 @@ $(document).ready(function () {
        var btnIcon =$("<i>");
        btnIcon.addClass("fas fa-save");
    
-       //adding the elements to the page
+       //Adds the elements to the page
        $(divRow).appendTo(".container");
        $(divHour).appendTo("#hour-" + realTime);
        $(textHour).appendTo("#hour-" + realTime);
