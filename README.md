@@ -4,8 +4,10 @@ This program was created in order to show a daily schedule that the user can use
 2. **_Red_ hour rows represent the current hour.**
 3. **_Green_ hour rows represent the hours that are still to occur during the day.**
 
-# Deployed Link
+## Deployed Link
 [WorkDaySchedule](https://jpls218.github.io/WorkDaySchedule/)
+
+## Screenshots
 Below is a screenshot of the application once opened:
 ![First Screenshot](Workday_Schedule.jpeg)
 
